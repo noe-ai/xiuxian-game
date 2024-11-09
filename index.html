@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>凡心问道</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="safe-area-inset">
+        <!-- 主游戏界面 -->
+        <div id="game-screen" class="screen">
+            <div class="card game-card">
+                <!-- 标题区域 -->
+                <div class="game-header">
+                    <h1 class="game-title">凡心问道</h1>
+                    <p class="game-subtitle">一个修仙者的成长之路</p>
+                </div>
+                
+                <!-- 属性面板 -->
+                <div class="stats-panel">
+                    <!-- 第一行：境界和当前修炼 -->
+                    <div class="stats-row">
+                        <div class="stat">
+                            <span class="label">境界</span>
+                            <span id="level">凡人</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">当前修炼</span>
+                            <span id="current-activity">打坐</span>
+                        </div>
+                    </div>
+                    <!-- 第二行：四个主要属性 -->
+                    <div class="stats-row">
+                        <div class="stat">
+                            <span class="label">修为</span>
+                            <span id="power">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">神识</span>
+                            <span id="spirit">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">体魄</span>
+                            <span id="strength">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">根骨</span>
+                            <span id="talent">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 消息面板 -->
+                <div class="message-panel">
+                    <div id="story-content"></div>
+                    <div id="choices"></div>
+                </div>
+
+                <!-- 操作按钮区域 -->
+                <div class="action-panel">
+                    <!-- 主要操作按钮 -->
+                    <div class="main-buttons">
+                        <button id="cultivate" class="main-btn">打坐修炼</button>
+                        <button id="explore" class="main-btn explore">探索世界</button>
+                    </div>
+                    
+                    <!-- 辅助操作按钮 -->
+                    <div class="sub-buttons">
+                        <button id="inventory-btn" class="sub-btn">背包</button>
+                        <button id="change-method" class="sub-btn">切换修炼</button>
+                    </div>
+
+                    <!-- 快速操作按钮 -->
+                    <div class="quick-buttons">
+                        <button id="meditate" class="quick-btn">冥想</button>
+                        <button id="practice" class="quick-btn">练习</button>
+                        <button id="comprehend" class="quick-btn">感悟</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 背包面板 -->
+    <div id="inventory-panel" class="side-panel">
+        <div class="panel-header">
+            <h3>背包</h3>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="panel-content" id="inventory-content"></div>
+    </div>
+
+    <script src="js/story.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html> 

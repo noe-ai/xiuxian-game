@@ -1,0 +1,722 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Microsoft YaHei', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 屏幕容器 */
+.screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* 卡牌基础样式 */
+.card {
+    background: #2a2a2a;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 欢迎界面样式 */
+.welcome-card {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.prologue {
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 10px;
+    max-width: 90%;
+    text-align: left;
+}
+
+.prologue-text {
+    margin: 15px 0;
+    color: #aaa;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+#start-btn {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    background: #4CAF50;
+    border-radius: 25px;
+}
+
+#start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* 角色选择界面样式 */
+.character-card {
+    padding: 0;
+}
+
+.card-header {
+    background: #3a3a3a;
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.character-info {
+    padding: 20px;
+}
+
+.attributes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.attribute {
+    background: #3a3a3a;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.label {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.skills {
+    margin: 20px 0;
+}
+
+.specialty {
+    color: #4CAF50;
+    font-style: italic;
+}
+
+.character-actions {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background: #3a3a3a;
+    border-radius: 0 0 15px 15px;
+}
+
+/* 主游戏界面样式 */
+.game-card {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+}
+
+.game-header {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.stats-panel {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.stats-row {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.stats-row:last-child {
+    margin-bottom: 0;
+}
+
+/* 第一行布局：两个属性平分空间 */
+.stats-row:first-child .stat {
+    flex: 1;
+}
+
+/* 第二行布局：四个属性等宽 */
+.stats-row:last-child .stat {
+    flex: 1;
+}
+
+.stat {
+    background: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label {
+    color: #888;
+    font-size: 0.8em;
+    margin-bottom: 2px;
+}
+
+#level, #power, #spirit, #strength, #talent, #current-activity {
+    color: #fff;
+    font-size: 1em;
+}
+
+.character-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.message-panel {
+    flex: 1;  /* 占用剩余所有空间 */
+    background: #333;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    overflow-y: auto;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    background: #2a2a2a;
+    border-radius: 8px;
+}
+
+/* 主修炼按钮 */
+.main-action {
+    display: flex;
+    align-items: center;
+}
+
+.main-btn {
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* 副按钮区域 */
+.sub-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sub-btn {
+    flex: 1;
+    font-size: 1em;
+    background: #3a3a3a;
+}
+
+.sub-btn:hover {
+    background: #454545;
+}
+
+/* 按钮样式 */
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 3px;
+}
+
+/* 响应式设计 */
+@media (max-height: 700px) {
+    .card {
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .attributes {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 移动端基础适配 */
+:root {
+    --safe-area-inset-top: env(safe-area-inset-top, 0px);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-area-inset {
+    padding-top: var(--safe-area-inset-top);
+    padding-bottom: var(--safe-area-inset-bottom);
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+/* 卡牌样式优化 */
+.card {
+    width: min(90%, 400px);
+    margin: auto;
+    height: calc(100vh - var(--safe-area-inset-top) - var(--safe-area-inset-bottom) - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* 触摸优化 */
+button {
+    min-height: 44px; /* 最小触摸区域 */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 移动端字体大小优化 */
+@media screen and (max-width: 428px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    /* 属性面板优化 */
+    .stats-panel {
+        padding: 10px;
+    }
+    
+    /* 按钮布局优化 */
+    .action-buttons {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .main-btn {
+        height: 60px;
+    }
+    
+    /* 消息面板优化 */
+    .message-panel {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}
+
+/* iPhone X 及以上全面屏适配 */
+@supports (padding: max(0px)) {
+    .safe-area-inset {
+        padding-top: max(var(--safe-area-inset-top), 20px);
+        padding-bottom: max(var(--safe-area-inset-bottom), 20px);
+    }
+}
+
+/* 横屏优化 */
+@media screen and (orientation: landscape) and (max-height: 428px) {
+    .card {
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+    }
+    
+    .message-panel {
+        flex: 0.6;
+    }
+    
+    .action-buttons {
+        padding: 5px;
+    }
+}
+
+/* 触摸反馈化 */
+.button-touch {
+    position: relative;
+    overflow: hidden;
+}
+
+.button-touch::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.button-touch:active::after {
+    animation: ripple 0.4s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(40, 40);
+        opacity: 0;
+    }
+}
+
+/* 滚动优化 */
+.message-panel {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* 禁用长按选择 */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* 允许输入框选择 */
+input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+/* 加载文字样式 */
+.loading-text {
+    color: #4CAF50;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+/* 添加脉冲动画 */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* 添加向下滑入动画 */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 序言区域样式 */
+.prologue-content {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 10px;
+}
+
+.prologue-text {
+    color: #aaa;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* 操作按钮样式优化 */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    padding: 5px 0;
+    flex: 0 0 auto; /* 固定高度 */
+}
+
+.main-btn {
+    flex: 2;
+    height: 44px;
+}
+
+.sub-btn {
+    flex: 1;
+    height: 44px;
+}
+
+/* 背包面板样式 */
+.side-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background: #2a2a2a;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.side-panel.active {
+    transform: translateX(0);
+}
+
+.panel-header {
+    padding: 15px;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #888;
+    cursor: pointer;
+}
+
+.panel-content {
+    padding: 15px;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+}
+
+/* 快速操作按钮样式 */
+.quick-actions {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.quick-btn {
+    flex: 1;
+    padding: 8px;
+    font-size: 0.9em;
+    background: #3a3a3a;
+    color: #aaa;
+}
+
+.quick-btn:hover {
+    background: #454545;
+    color: #fff;
+}
+
+/* 操作面板���式 */
+.action-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+}
+
+.main-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.sub-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.quick-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.main-btn {
+    height: 50px;
+    font-size: 1.1em;
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+}
+
+.main-btn.explore {
+    background: linear-gradient(145deg, #2196F3, #1976D2);
+}
+
+/* 辅助按钮样式 */
+.sub-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.sub-btn {
+    height: 40px;
+    font-size: 0.9em;
+    background: #3a3a3a;
+}
+
+.sub-btn:hover {
+    background: #454545;
+}
+
+/* 切换和选择按钮区域 */
+.choice-buttons {
+    display: flex;
+    gap: 8px;
+    min-height: 40px;
+}
+
+.choice-btn {
+    flex: 1;
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.story-choices {
+    flex: 2;
+    display: flex;
+    gap: 8px;
+}
+
+.story-choice-btn {
+    flex: 1;
+    background: #4a4a4a;
+    color: #fff;
+}
+
+/* 按钮通用样式 */
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+/* 技能面板样式 */
+.skill-panel {
+    padding: 10px;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skill-item {
+    background: #3a3a3a;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-info {
+    flex: 1;
+}
+
+.skill-name {
+    font-size: 1.1em;
+    color: #4CAF50;
+    margin-bottom: 5px;
+}
+
+.skill-desc {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 3px;
+}
+
+.skill-effect {
+    font-size: 0.8em;
+    color: #888;
+}
